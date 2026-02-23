@@ -56,6 +56,6 @@ export async function signOut() {
   // Clear all auth cookies
   const cookiesToDelete = ["sb-access-token", "sb-refresh-token"];
   for (const cookie of cookiesToDelete) {
-    cookieStore.delete(cookie);
+    cookieStore.set(cookie, "", { expires: new Date(0) });
   }
 }
